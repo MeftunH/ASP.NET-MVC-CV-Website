@@ -1,0 +1,30 @@
+﻿@model MVCCV.Models.Class.Class1
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Main_Layout.cshtml";
+}
+
+
+<table class="table table-bordered border">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>INTERESTS</th>
+            <th>DELETE</th>
+            <th>UPDATE</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model.VarInterests)
+        {
+            <tr>
+                <th>@x.ID</th>
+                <td>@x.INTEREST</td>
+                <td>@Html.ActionLink("Delete", "Delete", new { id = x.ID }, new { @class = "btn btn-danger", onclick = "return confirm('Are you sure you want to delete this item?')" })</td>
+                <td><a href="/Interests/GetInterest/@x.ID" class="btn btn-warning">UPDATE</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Interests/NewInterest/" class="btn btn-info">Add new interest</a>
+

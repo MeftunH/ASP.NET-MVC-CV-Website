@@ -1,0 +1,35 @@
+﻿@model MVCCV.Models.Class.Class1
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Main_Layout.cshtml";
+}
+<table class="table table-bordered border">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>SURNAME</th>
+            <th>ADDRESS</th>
+            <th>PHONE</th>
+            <th>MAIL</th>
+            <th>ABOUT</th>
+            <th>UPDATE</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model.VarAbout)
+        {
+            <tr>
+                <td>@x.ID</td>
+                <td>@x.NAME</td>
+                <td>@x.SURNAME</td>
+                <td>@x.ADDRESS</td>
+                <td>@x.PHONE</td>
+                <td>@x.MAIL</td>
+                <td>@x.ABOUT</td>
+                <td><a href="/About/GetData/@x.ID" class="btn btn-warning">UPDATE</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+

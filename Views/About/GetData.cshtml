@@ -1,0 +1,33 @@
+﻿@model MVCCV.Models.Entity.TBL_ABOUT
+    @{
+        ViewBag.Title = "GetData";
+        Layout = "~/Views/Shared/_Main_Layout.cshtml";
+    }
+@using (Html.BeginForm("UPDATE","ABOUT",FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.ID)
+        @Html.TextBoxFor(m => m.ID, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.NAME)
+        @Html.TextBoxFor(m => m.NAME, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.SURNAME)
+        @Html.TextBoxFor(m => m.SURNAME, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.ADDRESS)
+        @Html.TextBoxFor(m => m.ADDRESS, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.PHONE)
+        @Html.TextBoxFor(m => m.PHONE, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.MAIL)
+        @Html.TextBoxFor(m => m.MAIL, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.ABOUT)
+        @Html.TextAreaFor(m => m.ABOUT, new { @class = "form-control", rows = "6", cols = "10" })
+        <br />
+        <button class="btn btn-primary">UPDATE</button>
+    </div>
+    
+}
